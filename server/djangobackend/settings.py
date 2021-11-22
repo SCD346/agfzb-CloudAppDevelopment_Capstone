@@ -28,7 +28,7 @@ DEBUG = True
 APPEND_SLASH = True
 
 ALLOWED_HOSTS = [
-    "us-south.cf.appdomain.cloud",
+    "eu-gb.cf.appdomain.cloud",
     "localhost"
 ]
 
