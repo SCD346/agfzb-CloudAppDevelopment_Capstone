@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 # Create a `contact` view to return a static contact page
 def contact(request):
-    return render(request, 'djangoapp/contact.html', {})
+    return render(request, 'djangoappSCD/contact.html', {})
 
 # Create a `login_request` view to handle sign in request
 # def login_request(request):
@@ -42,7 +42,7 @@ def contact(request):
 def get_dealerships(request):
     context = {}
     if request.method == "GET":
-        return render(request, 'djangoapp/index.html', context)
+        return render(request, 'djangoappSCD/index.html', context)
 
 
 # Create a `get_dealer_details` view to render the reviews of a dealer

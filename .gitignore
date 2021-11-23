@@ -133,10 +133,10 @@ dmypy.json
 # Ignore PyCharm files
 .idea/
 server/__pycache__/
-server/djangoapp/__pycache__/
-server/djangoapp/templates/djangoapp/__pycache__/
-server/djangoapp/migrations/
+server/djangoappSCD/__pycache__/
+server/djangoappSCD/templates/djangoappSCD/__pycache__/
+server/djangoappSCD/migrations/
 .DS_Store
 *.pyc
-server/djangoapp/migrations/
+server/djangoappSCD/migrations/
 

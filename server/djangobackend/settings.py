@@ -28,7 +28,7 @@ DEBUG = True
 APPEND_SLASH = True
 
 ALLOWED_HOSTS = [
-    "eu-gb.cf.appdomain.cloud",
+    "apic.eu-gb.mybluemix.net",
     "localhost"
 ]
 
@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'djangoapp.apps.DjangoappConfig',
+    'djangoappSCD.apps.DjangoappSCDConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
