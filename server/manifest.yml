@@ -1,11 +1,11 @@
   applications:
   - name: djangoappSCD
     routes:
-      - route: apic.eu-gb.mybluemix.net
+      - route: us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: python_buildpack
   - name: djangoappSCD-nginx
     routes:
-      - route: apic.eu-gb.mybluemix.net/static
+      - route: us-south.cf.appdomain.cloud/static
     memory: 128M
     buildpack: staticfile_buildpack
