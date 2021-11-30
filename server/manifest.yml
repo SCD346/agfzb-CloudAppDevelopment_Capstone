@@ -1,11 +1,11 @@
   applications:
   - name: djangoappSCD
     routes:
-      - route: us-south.cf.appdomain.cloud
+      - route: scdapp.us-south.cf.appdomain.cloud
     memory: 128M
     buildpack: python_buildpack
   - name: djangoappSCD-nginx
     routes:
-      - route: us-south.cf.appdomain.cloud/static
+      - route: scdapp.us-south.cf.appdomain.cloud/static
     memory: 128M
     buildpack: staticfile_buildpack
