@@ -37,19 +37,19 @@ def login_request(request):
         # If user is valid
         if user is not None:
             login(request, user)
-            return redirect('djangoapp:index')
+            return redirect('djangoappSCD:index')
         else:
             # Failed Login
-            resp =  redirect('djangoapp:index')
+            resp =  redirect('djangoappSCD:index')
             resp['Location'] += '?msg=login_failed'
             return resp
     else:
-        return redirect('djangoapp:index')
+        return redirect('djangoappSCD:index')
 
 
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
-    resp =  redirect('djangoapp:index')
+    resp =  redirect('djangoappSCD:index')
     resp['Location'] += '?msg=logout&user=' + request.user.username
     logout(request)
     return resp
@@ -57,7 +57,7 @@ def logout_request(request):
 # Create a `registration_request` view to handle sign up request
 def registration_request(request):
     ctx = {}
-    return render(request, 'djangoapp/registration.html', ctx)
+    return render(request, 'djangoappSCD/registration.html', ctx)
 
 def signup_request(request):
     ctx = {}
@@ -80,16 +80,16 @@ def signup_request(request):
             user = User.objects.create_user(username=username, first_name=first_name,
                                             last_name=last_name,password=password)
             login(request, user)
-            return redirect('djangoapp:index')
+            return redirect('djangoappSCD:index')
 
         else:
-            resp =  redirect('djangoapp:register')
+            resp =  redirect('djangoappSCD:register')
             resp['Location'] += '?signin=exist'
             logout(request)
             return resp
 
     else:
-        return redirect('djangoapp:register')
+        return redirect('djangoappSCD:register')
 
 
 # Update the `get_dealerships` view to render the index page with a list of dealerships

@@ -13,6 +13,48 @@
     
     </head>
     <body>
-    <!--Add a registration form here -->
-    </body>
+        {% include "djangoappSCD/nav.html" %}  
+        <!--Add a registration form here -->
+  
+        {% if 'signin' in request.GET %}
+          {% if request.GET.signin == 'exist' %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Sign In failed!</strong> User already exists.
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          {% endif %}
+        {% endif %}
+  
+    <br>
+    <div class="container card">
+      <div class="card-body">
+        <h1>Sign Up</h1>
+        <hr>
+        <form method="POST" action="{% url 'djangoappSCD:signup' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label><b>User Name</b></label>
+            <input type="text" name="user" class="form-control" placeholder="Enter user name">
+          </div>
+          <div class="form-group">
+            <label><b>First Name</b></label>
+            <input type="text" name="fname" class="form-control" placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label><b>Last Name</b></label>
+            <input type="text" name="lname" class="form-control" placeholder="Enter last name">
+          </div>
+          <div class="form-group">
+            <label><b>Password</b></label>
+            <input type="password" name="password" class="form-control" placeholder="Enter password">
+          </div>
+          <hr>
+          <button class="btn btn-info" type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  
+  </body>
 </html>
