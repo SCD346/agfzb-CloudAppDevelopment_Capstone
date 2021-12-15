@@ -12,7 +12,7 @@ FROM python:3.8.2
     WORKDIR $APP
 
     # Install the requirements
-    COPY server/requirements.txt $APP
+    COPY requirements.txt $APP
     RUN pip install --upgrade pip
     RUN pip install -r requirements.txt
 
