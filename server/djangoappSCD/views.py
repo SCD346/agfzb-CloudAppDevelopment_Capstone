@@ -30,7 +30,7 @@ def contact(request):
     return render(request, 'djangoappSCD/contactus.html', ctx)
 
 # Create a `register` view to return a static contact page
-def contact(request):
+def register(request):
     ctx = {}
     return render(request, 'djangoappSCD/register.html', ctx)
 
