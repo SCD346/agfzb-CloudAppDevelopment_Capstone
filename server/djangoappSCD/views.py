@@ -29,9 +29,14 @@ def contact(request):
     ctx = {}
     return render(request, 'djangoappSCD/contactus.html', ctx)
 
+# Create a `register` view to return a static contact page
+def contact(request):
+    ctx = {}
+    return render(request, 'djangoappSCD/register.html', ctx)
+
 # Create a `login_request` view to handle sign in request
 def login_request(request):
-    ctx = {} 
+    ctx = {}
     if request.method == "POST":
         user = request.POST['user']
         password = request.POST['password']
@@ -153,7 +158,7 @@ def add_review(request, dealer_id):
                     "review": request.POST['content']
                 }
             }
-            
+
             json_result = post_request(url, payload)
             review = json_result
 
@@ -162,7 +167,7 @@ def add_review(request, dealer_id):
             ctx['cars'] = list(CarModel.objects.all())
             ctx['created'] = True
             return render(request, 'djangoappSCD/add_review.html', ctx)
-            
+
         else:
             raise PermissionDenied("Only auth users can post.")
     else:
